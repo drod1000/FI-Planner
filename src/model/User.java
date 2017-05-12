@@ -32,21 +32,26 @@ public class User {
         this.strategy = strategy;
     }
 
-    private void buyProperty(double downPayment) {
-        double purchasingPower = downPayment / strategy.getDownPaymentPercentage();
-        Property newProperty = new Property(purchasingPower, strategy.getCapRate());
-
-        properties.add(newProperty);
-        cashOnHand -= downPayment;
-    }
-
     private void yearPasses() {
-        cashOnHand += yearlyCashFlowfromSavings + yearlyCashFlowFromProperties;
+        cashOnHand += yearlyCashFlowfromSavings() + yearlyCashFlowFromProperties();
         yearsPassed++;
 
         if(yearsPassed % strategy.getBuyingWindow() == 0) {
             // Note: Will change if preferred buffer is added
             buyProperty(cashOnHand);
         }
+    }
+
+    private double yearlyCashFlowfromSavings() {
+        return annualSalary * strategy.getSavingsRate();
+    }
+
+
+    private void buyProperty(double downPayment) {
+        double purchasingPower = downPayment / strategy.getDownPaymentPercentage();
+        Property newProperty = new Property(purchasingPower, strategy.getCapRate());
+
+        properties.add(newProperty);
+        cashOnHand -= downPayment;
     }
 }
