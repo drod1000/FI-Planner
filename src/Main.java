@@ -1,3 +1,4 @@
+import model.Strategy;
 import model.User;
 
 public class Main {
@@ -6,5 +7,6 @@ public class Main {
 
         Prompter prompter = new Prompter();
         User user = prompter.getUserInfo();
+        Strategy strategy = prompter.getStrategyInfo();
     }
 }
