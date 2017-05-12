@@ -36,6 +36,10 @@ public class User {
         cashOnHand += yearlyCashFlowfromSavings() + yearlyCashFlowFromProperties();
         yearsPassed++;
 
+        for(Property property : properties) {
+            property.yearPasses();
+        }
+
         if(yearsPassed % strategy.getBuyingWindow() == 0) {
             // Note: Will change if preferred buffer is added
             buyProperty(cashOnHand);

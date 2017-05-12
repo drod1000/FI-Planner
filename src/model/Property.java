@@ -2,7 +2,8 @@ package model;
 
 public class Property {
     static final double APPRECIATION_RATE = .03;
-    // TODO: 5/12/17 Add depreciation expense 
+    // TODO: 5/12/17 Add depreciation expense
+    // Note: could potentially add rent increase percentage
     private double value;
     private final double purchasePrice;
     private final double capRate;
@@ -15,5 +16,9 @@ public class Property {
 
     public double yearlyCashFlow() {
         return purchasePrice * capRate;
+    }
+
+    public void yearPasses() {
+        value *= 1 + APPRECIATION_RATE;
     }
 }
