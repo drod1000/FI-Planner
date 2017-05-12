@@ -9,4 +9,16 @@ public class User {
         this.name = name;
         this.annualSalary = annualSalary;
     }
+
+    @Override
+    public String toString() {
+        // TODO: 5/12/17 Update amounts with formatting for currency 
+        return "User named " +
+                name +
+                " with an annual salary of " +
+                annualSalary +
+                " and " +
+                cashOnHand +
+                " cash on hand.";
+    }
 }
