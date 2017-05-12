@@ -10,5 +10,6 @@ public class Main {
         Strategy strategy = prompter.getStrategyInfo();
 
         user.setStrategy(strategy);
+        user.generateCashFlowOutcome();
     }
 }
