@@ -4,6 +4,7 @@ public class User {
     private final String name;
     private double annualSalary;
     private double cashOnHand = 0;
+    private Strategy strategy;
 
     public User(String name, double annualSalary) {
         this.name = name;
@@ -20,5 +21,9 @@ public class User {
                 " and " +
                 cashOnHand +
                 " cash on hand.";
+    }
+
+    public void setStrategy(Strategy strategy) {
+        this.strategy = strategy;
     }
 }
