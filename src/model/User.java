@@ -46,6 +46,14 @@ public class User {
         return annualSalary * strategy.getSavingsRate();
     }
 
+    private double yearlyCashFlowFromProperties() {
+        double totalCashFlow = 0;
+
+        for(Property property : properties) {
+            totalCashFlow += property.yearlyCashFlow();
+        }
+        return totalCashFlow;
+    }
 
     private void buyProperty(double downPayment) {
         double purchasingPower = downPayment / strategy.getDownPaymentPercentage();
