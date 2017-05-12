@@ -5,14 +5,16 @@ public class Strategy {
     private final double capRate;
     private final double downPaymentPercentage;
     private final int buyingWindow;
+    private final int yearsToFI;
 
-    public Strategy(double savingsRate, double capRate, double downPaymentPercentage, int buyingWindow) {
+    public Strategy(double savingsRate, double capRate, double downPaymentPercentage, int buyingWindow, int yearsToFI) {
         this.savingsRate = savingsRate;
         // TODO: 5/12/17 Add preferred buffer 
         this.capRate = capRate;
         this.downPaymentPercentage = downPaymentPercentage;
         // TODO: 5/12/17 Turn into double once basic functionality is finished 
         this.buyingWindow = buyingWindow;
+        this.yearsToFI = yearsToFI;
     }
 
     @Override
@@ -22,6 +24,7 @@ public class Strategy {
                 ", capRate=" + capRate +
                 ", downPaymentPercentage=" + downPaymentPercentage +
                 ", buyingWindow=" + buyingWindow +
+                ", yearsToFI=" + yearsToFI +
                 '}';
     }
 
@@ -39,5 +42,9 @@ public class Strategy {
 
     public int getBuyingWindow() {
         return buyingWindow;
+    }
+
+    public int getYearsToIndepence() {
+        return yearsToFI;
     }
 }
