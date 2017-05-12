@@ -26,12 +26,15 @@ public class Prompter {
         double downPaymentPercentage = in.nextFloat() / 100;
         System.out.println("Please enter your preferred buying window");
         int buyingWindow = in.nextInt();
+        System.out.println("Please enter desired years to FI");
+        int yearsToFI = in.nextInt();
 
         Strategy strategy = new Strategy(
                 savingsRate,
                 capRate,
                 downPaymentPercentage,
-                buyingWindow);
+                buyingWindow,
+                yearsToFI);
         return strategy;
     }
 }
