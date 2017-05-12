@@ -23,4 +23,20 @@ public class Strategy {
                 ", buyingWindow=" + buyingWindow +
                 '}';
     }
+
+    public double getSavingsRate() {
+        return savingsRate;
+    }
+
+    public double getCapRate() {
+        return capRate;
+    }
+
+    public double getDownPaymentPercentage() {
+        return downPaymentPercentage;
+    }
+
+    public int getBuyingWindow() {
+        return buyingWindow;
+    }
 }
