@@ -1,3 +1,5 @@
+package model;
+
 public class Strategy {
     private final double savingsRate;
     private final double capRate;
