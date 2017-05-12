@@ -12,4 +12,14 @@ public class Strategy {
         this.downPaymentPercentage = downPaymentPercentage;
         this.buyingWindow = buyingWindow;
     }
+
+    @Override
+    public String toString() {
+        return "Strategy{" +
+                "savingsRate=" + savingsRate +
+                ", capRate=" + capRate +
+                ", downPaymentPercentage=" + downPaymentPercentage +
+                ", buyingWindow=" + buyingWindow +
+                '}';
+    }
 }
