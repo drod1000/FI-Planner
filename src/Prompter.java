@@ -1,3 +1,4 @@
+import model.Strategy;
 import model.User;
 
 import java.util.Scanner;
@@ -14,5 +15,23 @@ public class Prompter {
         User user = new User(name, annualSalary);
 
         return user;
+    }
+
+    public Strategy getStrategyInfo() {
+        System.out.println("Please enter your target savings rate");
+        double savingsRate = in.nextFloat() /100;
+        System.out.println("Please enter your target cap rate");
+        double capRate = in.nextFloat() / 100;
+        System.out.println("Please enter your preferred down payment percentage");
+        double downPaymentPercentage = in.nextFloat() / 100;
+        System.out.println("Please enter your preferred buying window");
+        int buyingWindow = in.nextInt();
+
+        Strategy strategy = new Strategy(
+                savingsRate,
+                capRate,
+                downPaymentPercentage,
+                buyingWindow);
+        return strategy;
     }
 }
