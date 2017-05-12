@@ -8,5 +8,7 @@ public class Main {
         Prompter prompter = new Prompter();
         User user = prompter.getUserInfo();
         Strategy strategy = prompter.getStrategyInfo();
+
+        user.setStrategy(strategy);
     }
 }
