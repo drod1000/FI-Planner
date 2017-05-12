@@ -1,10 +1,14 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private final String name;
     private double annualSalary;
     private double cashOnHand = 0;
     private Strategy strategy;
+    private List<Property> properties = new ArrayList<Property>();
 
     public User(String name, double annualSalary) {
         this.name = name;
