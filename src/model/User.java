@@ -1,5 +1,7 @@
 package model;
 
+import com.sun.org.apache.bcel.internal.classfile.SourceFile;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,17 +35,18 @@ public class User {
     }
 
     private void yearPasses() {
+        if(yearsPassed > 0 && yearsPassed % strategy.getBuyingWindow() == 0) {
+            // Note: Will change if preferred buffer is added
+            buyProperty(cashOnHand);
+        }
+
         cashOnHand += yearlyCashFlowfromSavings() + yearlyCashFlowFromProperties();
-        yearsPassed++;
 
         for(Property property : properties) {
             property.yearPasses();
         }
+        yearsPassed++;
 
-        if(yearsPassed % strategy.getBuyingWindow() == 0) {
-            // Note: Will change if preferred buffer is added
-            buyProperty(cashOnHand);
-        }
     }
 
     private double yearlyCashFlowfromSavings() {
@@ -65,5 +68,17 @@ public class User {
 
         properties.add(newProperty);
         cashOnHand -= downPayment;
+    }
+
+    public void generateCashFlowOutcome() {
+        for(int i = 1; i <= strategy.getYearsToIndepence(); i++) {
+            yearPasses();
+            System.out.printf(
+                    "Year: %s, From Savings: %s, From Properties: %s, Cash: %s%n",
+                    i,
+                    yearlyCashFlowfromSavings(),
+                    yearlyCashFlowFromProperties(),
+                    cashOnHand);
+        }
     }
 }
