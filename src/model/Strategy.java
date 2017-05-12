@@ -10,6 +10,7 @@ public class Strategy {
         this.savingsRate = savingsRate;
         this.capRate = capRate;
         this.downPaymentPercentage = downPaymentPercentage;
+        // TODO: 5/12/17 Turn into double once basic functionality is finished 
         this.buyingWindow = buyingWindow;
     }
 
