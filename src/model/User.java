@@ -30,4 +30,12 @@ public class User {
     public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
     }
+
+    private void buyProperty(double downPayment) {
+        double purchasingPower = downPayment / strategy.getDownPaymentPercentage();
+        Property newProperty = new Property(purchasingPower, strategy.getCapRate());
+
+        properties.add(newProperty);
+        cashOnHand -= downPayment;
+    }
 }
