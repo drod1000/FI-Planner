@@ -8,6 +8,7 @@ public class Strategy {
 
     public Strategy(double savingsRate, double capRate, double downPaymentPercentage, int buyingWindow) {
         this.savingsRate = savingsRate;
+        // TODO: 5/12/17 Add preferred buffer 
         this.capRate = capRate;
         this.downPaymentPercentage = downPaymentPercentage;
         // TODO: 5/12/17 Turn into double once basic functionality is finished 

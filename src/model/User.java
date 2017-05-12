@@ -7,6 +7,7 @@ public class User {
     private final String name;
     private double annualSalary;
     private double cashOnHand = 0;
+    private int yearsPassed = 0;
     private Strategy strategy;
     private List<Property> properties = new ArrayList<Property>();
 
@@ -37,5 +38,15 @@ public class User {
 
         properties.add(newProperty);
         cashOnHand -= downPayment;
+    }
+
+    private void yearPasses() {
+        cashOnHand += yearlyCashFlowfromSavings + yearlyCashFlowFromProperties;
+        yearsPassed++;
+
+        if(yearsPassed % strategy.getBuyingWindow() == 0) {
+            // Note: Will change if preferred buffer is added
+            buyProperty(cashOnHand);
+        }
     }
 }
