@@ -13,4 +13,13 @@ public class Loan {
         this.payment = ((INTEREST_RATE / 12) * initialAmount) /
                 (1 - Math.pow((1 + INTEREST_RATE/12), -NUMBER_OF_PAYMENTS));
     }
+
+
+    public void yearPasses() {
+        // TODO: 5/17/17 Need check for once loan is paid off 
+        for(int i = 1; i <= 12; i++) {
+            double monthlyInterest = principalRemaining * (INTEREST_RATE / 12);
+            principalRemaining -= payment - monthlyInterest;
+        }
+    }
 }
