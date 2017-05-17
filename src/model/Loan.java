@@ -14,6 +14,9 @@ public class Loan {
                 (1 - Math.pow((1 + INTEREST_RATE/12), -NUMBER_OF_PAYMENTS));
     }
 
+    public double getPrincipalRemaining() {
+        return principalRemaining;
+    }
 
     public void yearPasses() {
         // TODO: 5/17/17 Need check for once loan is paid off 
