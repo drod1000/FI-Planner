@@ -13,7 +13,19 @@ public class Property {
         this.value = purchasePrice;
         this.purchasePrice = purchasePrice;
         this.capRate = capRate;
-        this.loan = new Loan(downPayment);
+        this.loan = new Loan(purchasePrice - downPayment);
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public double getPrincipalRemaining() {
+        return loan.getPrincipalRemaining();
+    }
+
+    public double netWorth() {
+        return value - getPrincipalRemaining();
     }
 
     public double yearlyCashFlow() {
