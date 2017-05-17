@@ -104,4 +104,16 @@ public class User {
             System.out.printf("%n");
         }
     }
+
+    private double netWorthFromProperties() {
+        double total = 0;
+        for(Property property : properties) {
+            total += property.netWorth();
+        }
+        return total;
+    }
+
+    private double totalNetWorth() {
+        return cashOnHand + netWorthFromProperties();
+    }
 }
