@@ -22,5 +22,6 @@ public class Property {
 
     public void yearPasses() {
         value *= 1 + APPRECIATION_RATE;
+        loan.yearPasses();
     }
 }
