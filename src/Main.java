@@ -11,5 +11,6 @@ public class Main {
 
         user.setStrategy(strategy);
         user.generateCashFlowOutcome();
+        user.generateBalanceSheetOutcome();
     }
 }
