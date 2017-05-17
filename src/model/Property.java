@@ -7,11 +7,13 @@ public class Property {
     private double value;
     private final double purchasePrice;
     private final double capRate;
+    private Loan loan;
 
-    public Property(double purchasePrice, double capRate) {
+    public Property(double purchasePrice, double downPayment, double capRate) {
         this.value = purchasePrice;
         this.purchasePrice = purchasePrice;
         this.capRate = capRate;
+        this.loan = new Loan(downPayment);
     }
 
     public double yearlyCashFlow() {

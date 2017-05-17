@@ -64,7 +64,7 @@ public class User {
 
     private void buyProperty(double downPayment) {
         double purchasingPower = downPayment / strategy.getDownPaymentPercentage();
-        Property newProperty = new Property(purchasingPower, strategy.getCapRate());
+        Property newProperty = new Property(purchasingPower, downPayment, strategy.getCapRate());
 
         properties.add(newProperty);
         cashOnHand -= downPayment;
