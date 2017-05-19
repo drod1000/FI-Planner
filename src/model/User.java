@@ -34,7 +34,7 @@ public class User {
 
     // TODO: 5/17/17 This should go in Display class
     public void generateCashFlowOutcome() {
-        // TODO: 5/17/17 need to reset yearsPassed
+        reset();
         for(int i = 1; i <= strategy.getYearsToIndepence(); i++) {
             yearPasses();
             System.out.printf(
@@ -48,7 +48,7 @@ public class User {
 
     // TODO: 5/17/17 This should go in Display class
     public void generateBalanceSheetOutcome() {
-        // TODO: 5/17/17 need to reset yearsPassed
+        reset();
         for(int i = 1; i <= strategy.getYearsToIndepence(); i++) {
             yearPasses();
             System.out.printf("Year: %s, Cash: %s, Net Worth From Properties: %s, Total Net Worth: %s",
@@ -65,6 +65,12 @@ public class User {
             }
             System.out.printf("%n");
         }
+    }
+
+    private void reset() {
+        cashOnHand = 0;
+        yearsPassed = 0;
+        properties = new ArrayList();
     }
 
     private void yearPasses() {
