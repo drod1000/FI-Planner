@@ -32,6 +32,41 @@ public class User {
         this.strategy = strategy;
     }
 
+    // TODO: 5/17/17 This should go in Display class
+    public void generateCashFlowOutcome() {
+        // TODO: 5/17/17 need to reset yearsPassed
+        for(int i = 1; i <= strategy.getYearsToIndepence(); i++) {
+            yearPasses();
+            System.out.printf(
+                    "Year: %s, From Savings: %s, From Properties: %s, Cash: %s%n",
+                    i,
+                    yearlyCashFlowfromSavings(),
+                    yearlyCashFlowFromProperties(),
+                    cashOnHand);
+        }
+    }
+
+    // TODO: 5/17/17 This should go in Display class
+    public void generateBalanceSheetOutcome() {
+        // TODO: 5/17/17 need to reset yearsPassed
+        for(int i = 1; i <= strategy.getYearsToIndepence(); i++) {
+            yearPasses();
+            System.out.printf("Year: %s, Cash: %s, Net Worth From Properties: %s, Total Net Worth: %s",
+                    i,
+                    cashOnHand,
+                    netWorthFromProperties(),
+                    totalNetWorth());
+            // TODO: 5/17/17 Might want to pull this out into a detailed look
+            for(Property property: properties) {
+                System.out.printf("Property Value: %s, Property Principal: %s, Property Net: %s",
+                        property.getValue(),
+                        property.getPrincipalRemaining(),
+                        property.netWorth());
+            }
+            System.out.printf("%n");
+        }
+    }
+
     private void yearPasses() {
         if(yearsPassed > 0 && yearsPassed % strategy.getBuyingWindow() == 0) {
             // Note: Will change if preferred buffer is added
@@ -66,41 +101,6 @@ public class User {
 
         properties.add(newProperty);
         cashOnHand -= downPayment;
-    }
-
-    // TODO: 5/17/17 This should go in Display class 
-    public void generateCashFlowOutcome() {
-        // TODO: 5/17/17 need to reset yearsPassed 
-        for(int i = 1; i <= strategy.getYearsToIndepence(); i++) {
-            yearPasses();
-            System.out.printf(
-                    "Year: %s, From Savings: %s, From Properties: %s, Cash: %s%n",
-                    i,
-                    yearlyCashFlowfromSavings(),
-                    yearlyCashFlowFromProperties(),
-                    cashOnHand);
-        }
-    }
-
-    // TODO: 5/17/17 This should go in Display class 
-    public void generateBalanceSheetOutcome() {
-        // TODO: 5/17/17 need to reset yearsPassed 
-        for(int i = 1; i <= strategy.getYearsToIndepence(); i++) {
-            yearPasses();
-            System.out.printf("Year: %s, Cash: %s, Net Worth From Properties: %s, Total Net Worth: %s",
-                    i,
-                    cashOnHand,
-                    netWorthFromProperties(),
-                    totalNetWorth());
-            // TODO: 5/17/17 Might want to pull this out into a detailed look 
-            for(Property property: properties) {
-                System.out.printf("Property Value: %s, Property Principal: %s, Property Net: %s",
-                        property.getValue(),
-                        property.getPrincipalRemaining(),
-                        property.netWorth());
-            }
-            System.out.printf("%n");
-        }
     }
 
     private double netWorthFromProperties() {
