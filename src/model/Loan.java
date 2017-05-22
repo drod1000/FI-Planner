@@ -24,5 +24,15 @@ public class Loan {
             double monthlyInterest = principalRemaining * (INTEREST_RATE / 12);
             principalRemaining -= payment - monthlyInterest;
         }
+        principalRemaining -= yearlyPrincipalPaid();
+    }
+
+    private double yearlyInterestPaid() {
+        double totalInterest = 0;
+        for(int i = 1; i <= 12; i++) {
+            double monthlyInterest = principalRemaining * (INTEREST_RATE / 12);
+            totalInterest += monthlyInterest
+        }
+        return totalInterest;
     }
 }
