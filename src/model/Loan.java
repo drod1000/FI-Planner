@@ -1,8 +1,8 @@
 package model;
 
 public class Loan {
-    static final double INTEREST_RATE = .06;
-    static final int NUMBER_OF_PAYMENTS = 240;
+    static final double INTEREST_RATE = .05;
+    static final int NUMBER_OF_PAYMENTS = 360;
     private final double initialAmount;
     private double principalRemaining;
     private final double payment;
