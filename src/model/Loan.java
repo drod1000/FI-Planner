@@ -27,6 +27,10 @@ public class Loan {
         principalRemaining -= yearlyPrincipalPaid();
     }
 
+    private double yearlyDebtService() {
+        return payment * 12;
+    }
+
     private double yearlyInterestPaid() {
         double totalInterest = 0;
         for(int i = 1; i <= 12; i++) {
