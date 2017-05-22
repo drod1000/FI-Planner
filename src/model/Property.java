@@ -28,7 +28,7 @@ public class Property {
         return value - getPrincipalRemaining();
     }
 
-    public double yearlyCashFlow() {
+    public double yearlyNOI() {
         return purchasePrice * capRate;
     }
 

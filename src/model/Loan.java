@@ -31,7 +31,7 @@ public class Loan {
         double totalInterest = 0;
         for(int i = 1; i <= 12; i++) {
             double monthlyInterest = principalRemaining * (INTEREST_RATE / 12);
-            totalInterest += monthlyInterest
+            totalInterest += monthlyInterest;
         }
         return totalInterest;
     }
