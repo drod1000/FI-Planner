@@ -39,4 +39,8 @@ public class Loan {
         }
         return totalInterest;
     }
+
+    private double yearlyPrincipalPaid() {
+        return yearlyDebtService() - yearlyInterestPaid();
+    }
 }
