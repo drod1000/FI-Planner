@@ -32,6 +32,10 @@ public class Property {
         return purchasePrice * capRate;
     }
 
+    public double yearlyNetIncome() {
+        return yearlyNOI() - loan.yearlyInterestPaid();
+    }
+
     public void yearPasses() {
         value *= 1 + APPRECIATION_RATE;
         loan.yearPasses();
