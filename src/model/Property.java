@@ -49,7 +49,7 @@ public class Property {
     }
 
     public double yearlyCashFlow() {
-        return yearlyNOI() - yearlyTaxDue();
+        return yearlyNOI() - (loan.yearlyDebtService() + yearlyTaxDue());
     }
 
     public void yearPasses() {
