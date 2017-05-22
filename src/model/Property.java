@@ -36,6 +36,10 @@ public class Property {
         return yearlyNOI() - loan.yearlyInterestPaid();
     }
 
+    public double yearlyDepreciation() {
+        return (.85 * purchasePrice) / 27.5;
+    }
+
     public void yearPasses() {
         value *= 1 + APPRECIATION_RATE;
         loan.yearPasses();
