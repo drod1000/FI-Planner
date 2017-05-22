@@ -40,6 +40,10 @@ public class Property {
         return (.85 * purchasePrice) / 27.5;
     }
 
+    public double yearlyTaxableIncome() {
+        return yearlyNetIncome() - yearlyDepreciation();
+    }
+
     public void yearPasses() {
         value *= 1 + APPRECIATION_RATE;
         loan.yearPasses();
