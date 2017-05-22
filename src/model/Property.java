@@ -44,6 +44,14 @@ public class Property {
         return yearlyNetIncome() - yearlyDepreciation();
     }
 
+    public double yearlyTaxDue() {
+        return yearlyTaxableIncome() * .15;
+    }
+
+    public double yearlyCashFlow() {
+        return yearlyNOI() - yearlyTaxDue();
+    }
+
     public void yearPasses() {
         value *= 1 + APPRECIATION_RATE;
         loan.yearPasses();

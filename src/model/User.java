@@ -96,7 +96,7 @@ public class User {
         double totalCashFlow = 0;
 
         for(Property property : properties) {
-            totalCashFlow += property.yearlyNOI();
+            totalCashFlow += property.yearlyCashFlow();
         }
         return totalCashFlow;
     }
