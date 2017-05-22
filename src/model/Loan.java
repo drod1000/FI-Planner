@@ -23,11 +23,11 @@ public class Loan {
         principalRemaining -= yearlyPrincipalPaid();
     }
 
-    private double yearlyDebtService() {
+    public double yearlyDebtService() {
         return payment * 12;
     }
 
-    private double yearlyInterestPaid() {
+    public double yearlyInterestPaid() {
         double totalInterest = 0;
         for(int i = 1; i <= 12; i++) {
             double monthlyInterest = principalRemaining * (INTEREST_RATE / 12);
@@ -36,7 +36,7 @@ public class Loan {
         return totalInterest;
     }
 
-    private double yearlyPrincipalPaid() {
+    public double yearlyPrincipalPaid() {
         return yearlyDebtService() - yearlyInterestPaid();
     }
 }
