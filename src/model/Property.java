@@ -32,19 +32,19 @@ public class Property {
         return purchasePrice * capRate;
     }
 
-    public double yearlyNetIncome() {
+    private double yearlyNetIncome() {
         return yearlyNOI() - loan.yearlyInterestPaid();
     }
 
-    public double yearlyDepreciation() {
+    private double yearlyDepreciation() {
         return (.85 * purchasePrice) / 27.5;
     }
 
-    public double yearlyTaxableIncome() {
+    private double yearlyTaxableIncome() {
         return yearlyNetIncome() - yearlyDepreciation();
     }
 
-    public double yearlyTaxDue() {
+    private double yearlyTaxDue() {
         return yearlyTaxableIncome() * .15;
     }
 
